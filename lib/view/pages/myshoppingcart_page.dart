@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';import 'package:story_stock/view/pages/home_page.dart';
+import 'package:flutter/material.dart';
+import 'package:story_stock/view/pages/home_page.dart';
 import 'package:story_stock/view/pages/search_page.dart';
 import 'package:story_stock/view/pages/settings_page.dart';
+import 'package:story_stock/view/pages/user_page.dart';
 
 void main() {
   runApp(StoryStock());
@@ -108,10 +110,9 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
             ),
             IconButton(
               icon: Icon(Icons.person),
-              onPressed: (
-                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPage()));
-              ) {
-                // Navegar para o perfil do usuário
+              onPressed: ()
+               {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPage()));// Navegar para o perfil do usuário
               },
             ),
           ],
