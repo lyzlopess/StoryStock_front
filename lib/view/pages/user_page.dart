@@ -4,7 +4,7 @@ import 'package:story_stock/view/pages/search_page.dart';
 import 'package:story_stock/view/pages/settings_page.dart';
 import 'package:story_stock/view/pages/wishbooks_page.dart';
 import 'package:story_stock/view/pages/booksannounced_page.dart';
-
+import 'package:story_stock/view/pages/myshoppingcart_page.dart';
 
 
 
@@ -73,7 +73,7 @@ class UserPage extends StatelessWidget {
             leading: Icon(Icons.shopping_cart_outlined),
             title: Text('Meu carrinho'),
             onTap: () {      // Navegar para a tela de pesquisa
-
+              Navigator.push(context, MaterialPageRoute(builder: (context) => (ShoppingCartPage())));
 
             },
           ),

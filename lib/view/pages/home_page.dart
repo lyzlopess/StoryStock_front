@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:story_stock/view/pages/search_page.dart';
 import 'package:story_stock/view/pages/settings_page.dart';
+import 'package:story_stock/view/pages/user_page.dart';
 
 void main() {
   runApp(StoryStock());
@@ -71,6 +72,7 @@ class StoryStockHome extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.person),
               onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPage()));
                 // Navegar para o perfil do usuário
               },
             ),
