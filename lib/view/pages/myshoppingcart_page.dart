@@ -80,8 +80,9 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
           ),
           Text(
             'Total: R\$ ${total.toStringAsFixed(2)}',
-            style: TextStyle(fontSize: 15),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
+          SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               // Implemente a ação de confirmação aqui
@@ -97,6 +98,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
             IconButton(
               icon: Icon(Icons.home),
               onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => (StoryStockHome())));
                 // Navegar para a tela de livros
               },
             ),
