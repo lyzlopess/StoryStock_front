@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';import 'package:story_stock/view/pages/home_page.dart';
+import 'package:story_stock/view/pages/search_page.dart';
+import 'package:story_stock/view/pages/settings_page.dart';
 
 void main() {
   runApp(StoryStock());
