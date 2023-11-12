@@ -17,12 +17,12 @@ class StoryStock extends StatelessWidget {
   }
 }
 
-class BooksAnnounced extends StatelessWidget {
+class AboutUsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Livros anunciados"),
+        title: Text("Sobre nós"),
         actions: [
           IconButton(
             icon: Icon(Icons.settings),
@@ -36,24 +36,28 @@ class BooksAnnounced extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Lista de livros
-          Expanded(
-            child: ListView(
-              children: List.generate(2, (index) {
-                return ListTile(
-                  leading: Icon(Icons.book),
-                  title: Text("Livro ${index + 1}"),
-                  subtitle: Text("Autor do Livro ${index + 1}"),
-                  onTap: () {
-                    // Ação quando o livro for clicado
-                  },
-                );
-              }),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 60.0, vertical: 60.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Colors.purple.shade900,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Text(
+              'O aplicativo é importante pois soluciona o principal problema da maioria dos leitores que é a incapacidade de comprar livros e pagar o frete, que impede que esses leitores tenham acesso à informações, ideias e histórias contidas nos livros. O aplicativo promove a sustentabilidade ambiental, permite a aquisição acessível à literatura e o compartilhamento de conhecimento. O modelo de vendas entre usuários cria uma economia colaborativa, onde os participantes se beneficiam mutuamente por meio do compartilhamento de recursos.',
+              style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
           ),
-          IconButton(
-            icon: Icon(Icons.add_circle_outline),
-            onPressed: () {},
+          Expanded(child: Container()),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          (UserPage()))); // Implemente a ação de confirmação aqui
+            },
+            child: const Text('Confirmar'),
           ),
         ],
       ),

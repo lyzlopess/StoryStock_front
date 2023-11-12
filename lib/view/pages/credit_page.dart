@@ -17,12 +17,12 @@ class StoryStock extends StatelessWidget {
   }
 }
 
-class BooksAnnounced extends StatelessWidget {
+class CreditPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Livros anunciados"),
+        title: Text("Minhas moedas Storystock"),
         actions: [
           IconButton(
             icon: Icon(Icons.settings),
@@ -36,24 +36,35 @@ class BooksAnnounced extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Lista de livros
-          Expanded(
-            child: ListView(
-              children: List.generate(2, (index) {
-                return ListTile(
-                  leading: Icon(Icons.book),
-                  title: Text("Livro ${index + 1}"),
-                  subtitle: Text("Autor do Livro ${index + 1}"),
-                  onTap: () {
-                    // Ação quando o livro for clicado
-                  },
-                );
-              }),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 60.0, vertical: 60.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Colors.purple.shade900,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Text(
+              'Cada usuário ganha uma moeda ao realizar o cadastro, utilizada para escolher 1 livro desejado. Ao gastar essa moeda, você poderá adquirir outro por meio da oferta de um outro livro. Ao ser confirmada a entrega de um livro, o remetente recebe mais uma moeda.',
+              style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
           ),
-          IconButton(
-            icon: Icon(Icons.add_circle_outline),
-            onPressed: () {},
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 60.0),
+            child: Text(
+              'Minhas moedas StoryStock: 5 moedas',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(child: Container()),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          (UserPage()))); // Implemente a ação de confirmação aqui
+            },
+            child: Text('Confirmar'),
           ),
         ],
       ),
