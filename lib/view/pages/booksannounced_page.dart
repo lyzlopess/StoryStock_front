@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:story_stock/view/pages/addbooks_page.dart';
 import 'package:story_stock/view/pages/home_page.dart';
 import 'package:story_stock/view/pages/search_page.dart';
 import 'package:story_stock/view/pages/settings_page.dart';
@@ -52,8 +53,11 @@ class BooksAnnounced extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.add_circle_outline),
-            onPressed: () {},
+            icon: Icon(Icons.add_circle_outline, size: (35)),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => (AddPhotosPage())));
+            },
           ),
         ],
       ),
