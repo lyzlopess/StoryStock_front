@@ -4,13 +4,15 @@ void main() {
   runApp(StoryStock());
 }
 
-class StoryStock extends PersonalDataScreen {
+class StoryStock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Dados Pessoais'),
+          title: Text(
+            'Dados Pessoais',
+        ),
         ),
         body: PersonalDataScreen(),
       ),
@@ -29,8 +31,7 @@ class PersonalDataScreen extends StatelessWidget {
           // Adicione a imagem do usuário aqui
           CircleAvatar(
             radius: 50,
-            // Substitua 'sua_imagem.jpg' pelo caminho ou URL da imagem do usuário
-            backgroundImage: AssetImage('user.png'),
+            backgroundImage: AssetImage('lib/images/userr.png'),
           ),
           SizedBox(height: 20),
           PersonalDataField(
@@ -70,16 +71,16 @@ class PersonalDataField extends StatelessWidget {
         children: [
           Text(
             '$label:',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18, color: Colors.black),
           ),
           Row(
             children: [
               Text(
                 value,
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               SizedBox(width: 10),
-              Icon(Icons.edit),
+              Icon(Icons.edit, color: Colors.black),
             ],
           ),
         ],
