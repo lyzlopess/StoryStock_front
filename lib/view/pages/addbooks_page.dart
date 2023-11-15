@@ -40,11 +40,14 @@ class AddPhotosPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16.0),
-          ElevatedButton(
-            onPressed: () {
-              // Adicione a lógica para confirmar e processar as fotos aqui
-            },
-            child: Text('Confirmar'),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Adicione a lógica para confirmar e processar as fotos aqui
+              },
+              child: Text('Confirmar'),
+            ),
           ),
         ],
       ),
