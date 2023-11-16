@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:story_stock/view/pages/home_page.dart';
+import 'package:story_stock/view/pages/booksname_page.dart';
 
 void main() {
   runApp(StoryStock());
@@ -44,7 +45,11 @@ class AddPhotosPage extends StatelessWidget {
             padding: EdgeInsets.all(16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Adicione a lógica para confirmar e processar as fotos aqui
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            (BooksNamePage()))); // Adicione a lógica para confirmar e processar as fotos aqui
               },
               child: Text('Confirmar'),
             ),
