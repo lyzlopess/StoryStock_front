@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:story_stock/view/pages/authorsname_page.dart';
+import 'package:story_stock/view/pages/description_page.dart';
 
 void main() {
   runApp(StoryStock());
@@ -9,17 +9,17 @@ class StoryStock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BooksNamePage(),
+      home: AuthorsNamePage(),
     );
   }
 }
 
-class BooksNamePage extends StatelessWidget {
+class AuthorsNamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nome do livro'),
+        title: Text('Nome do autor'),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -28,7 +28,7 @@ class BooksNamePage extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 20),
             // Adicione um widget para selecionar uma foto de perfil aqui.
-            Text('Digite nome do livro'),
+            Text('Digite o nome do autor do livro'),
             TextFormField(
               decoration: InputDecoration(),
             ),
@@ -40,7 +40,7 @@ class BooksNamePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => (AuthorsNamePage())));
+                          builder: (context) => (DescriptionPage())));
                 },
                 child: Text('Confirmar'),
               ),
