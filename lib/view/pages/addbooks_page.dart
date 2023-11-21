@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:story_stock/view/pages/home_page.dart';
-import 'package:story_stock/view/pages/booksname_page.dart';
+import 'package:story_stock/view/pages/registerbook_page.dart';
 
 void main() {
   runApp(StoryStock());
@@ -49,7 +49,7 @@ class AddPhotosPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            (BooksNamePage()))); // Adicione a lógica para confirmar e processar as fotos aqui
+                            (RegisterBookPage()))); // Adicione a lógica para confirmar e processar as fotos aqui
               },
               child: Text('Confirmar'),
             ),
