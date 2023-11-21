@@ -74,8 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                // Implementar ação ao clicar no botão Criar Conta
-                // Você pode acessar os valores dos campos usando as variáveis de controle, por exemplo, cpfController.text para obter o CPF.
+               
               },
               child: Text('Criar Conta'),
             ),

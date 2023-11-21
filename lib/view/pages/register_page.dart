@@ -15,6 +15,9 @@ class StoryStock extends StatelessWidget {
 }
 
 class RegisterPage extends StatelessWidget {
+  final TextStyle labelTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
+  final EdgeInsets fieldPadding = EdgeInsets.symmetric(vertical: 10);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,41 +27,39 @@ class RegisterPage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: 20),
-            // Adicione um widget para selecionar uma foto de perfil aqui.
-            Text('Nome'),
+            Text('Nome', style: labelTextStyle),
             TextFormField(
-              decoration: InputDecoration(
-              ),
+              decoration: InputDecoration(),
             ),
-            SizedBox(height: 10),
-            Text('Email'),
+            SizedBox(height: fieldPadding.top),
+            Text('Email', style: labelTextStyle),
             TextFormField(
               decoration: InputDecoration(
                 hintText: '',
               ),
               keyboardType: TextInputType.emailAddress,
             ),
-            SizedBox(height: 10),
-            Text('Data de Nascimento'),
+            SizedBox(height: fieldPadding.top),
+            Text('Data de Nascimento', style: labelTextStyle),
             TextFormField(
               decoration: InputDecoration(
                 hintText: '',
               ),
               keyboardType: TextInputType.datetime,
             ),
-            SizedBox(height: 10),
-            Text('Definir uma Senha'),
+            SizedBox(height: fieldPadding.top),
+            Text('Definir uma Senha', style: labelTextStyle),
             TextFormField(
               decoration: InputDecoration(
                 hintText: '',
               ),
               obscureText: true,
             ),
-            SizedBox(height: 10),
-            Text('Confirmar Senha'),
+            SizedBox(height: fieldPadding.top),
+            Text('Confirmar Senha', style: labelTextStyle),
             TextFormField(
               decoration: InputDecoration(
                 hintText: '',
@@ -68,10 +69,7 @@ class RegisterPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Lógica para processar o registro do usuário
-                // Após o processamento, você pode navegar para a segunda etapa.
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));
-              },
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));                 },
               child: Text('Próximo'),
             ),
           ],
@@ -80,7 +78,6 @@ class RegisterPage extends StatelessWidget {
     );
   }
 }
-
 class second_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
