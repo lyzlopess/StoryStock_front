@@ -36,8 +36,8 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
             Expanded(
               child: Image.asset(
                 "lib/images/book.png",
-                width: 300.0, // Ajuste o tamanho da largura conforme necessário
-                height: 300.0, // Ajuste o tamanho da altura conforme necessário
+                width: 300.0, 
+                height: 300.0, 
               ),
             ),
             SizedBox(height: 16.0),

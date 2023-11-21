@@ -38,7 +38,7 @@ class StoryStockHome extends StatelessWidget {
           crossAxisSpacing: 4.0,
           mainAxisSpacing: 4.0,
         ),
-        itemCount: 12, // Aumentado o número total de itens
+        itemCount: 12, 
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
             return BookCard(
@@ -67,7 +67,6 @@ class StoryStockHome extends StatelessWidget {
               imagePath: "lib/images/a_culpa_é_das_estrelas.png",
               smallerImage: true,
               onTap: () {
-                // Adicione a navegação para o segundo livro, se necessário
               },
             );
           } else if (index == 2) {
@@ -76,7 +75,6 @@ class StoryStockHome extends StatelessWidget {
               author: "Colleen Hoover",
               imagePath: "lib/images/o_lado.png",
               onTap: () {
-                // Adicione a navegação para o terceiro livro, se necessário
               },
             );
           } else if (index == 3) {
@@ -85,7 +83,6 @@ class StoryStockHome extends StatelessWidget {
               author: "Taylor Jenkins Reid",
               imagePath: "lib/images/os_sete.png",
               onTap: () {
-                // Adicione a navegação para o quarto livro, se necessário
               },
             );
           } else if (index == 4) {
@@ -94,7 +91,6 @@ class StoryStockHome extends StatelessWidget {
               author: "Jenna Evans Welch",
               imagePath: "lib/images/amor.png",
               onTap: () {
-                // Adicione a navegação para o quinto livro, se necessário
               },
             );
           } else if (index == 5) {
@@ -103,8 +99,7 @@ class StoryStockHome extends StatelessWidget {
               author: "C. J. Tudor",
               imagePath: "lib/images/o_homem.png",
               onTap: () {
-                // Adicione a navegação para o sexto livro, se necessário
-              },
+                            },
             );
           } else if (index == 6) {
             return BookCard(
@@ -112,7 +107,7 @@ class StoryStockHome extends StatelessWidget {
               author: "Colleen Hoover",
               imagePath: "lib/images/todas.png",
               onTap: () {
-                // Adicione a navegação para o sétimo livro, se necessário
+
               },
             );
             
