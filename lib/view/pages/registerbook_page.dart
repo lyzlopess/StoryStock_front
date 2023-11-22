@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:story_stock/view/pages/addbooks_page.dart';
+import 'package:story_stock/view/pages/booksannounced_page.dart';
 
 class RegisterBookPage extends StatefulWidget {
   const RegisterBookPage({super.key});
@@ -42,8 +42,10 @@ class _RegisterBookPageState extends State<RegisterBookPage> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => (AddPhotosPage())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => (BooksAnnounced())));
               },
               child: Text('Ok'),
             ),
