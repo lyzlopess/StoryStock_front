@@ -69,6 +69,12 @@ flutter:
     - lib/images/logo.png
     - lib/images/userr.png
     - lib/images/book.png
+    - lib/images/a_culpa_é_das_estrelas.png
+    - lib/images/amor.png
+    - lib/images/o_homem.png
+    - lib/images/o_lado.png
+    - lib/images/os_sete.png
+    - lib/images/todas.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
