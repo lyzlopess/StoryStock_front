@@ -32,16 +32,11 @@ class StoryStockHome extends StatelessWidget {
           ),
         ],
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 4.0,
-          mainAxisSpacing: 4.0,
-        ),
-        itemCount: 12, 
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
-            return BookCard(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            BookCard(
               bookTitle: "É assim que acaba",
               author: "Colleen Hoover",
               imagePath: "lib/images/book.png",
@@ -59,60 +54,54 @@ class StoryStockHome extends StatelessWidget {
                   ),
                 );
               },
-            );
-          } else if (index == 1) {
-            return BookCard(
+            ),
+            BookCard(
               bookTitle: "A culpa é das Estrelas",
               author: "John Green",
               imagePath: "lib/images/a_culpa_é_das_estrelas.png",
-              smallerImage: true,
               onTap: () {
+                // Implemente a ação desejada para este livro
               },
-            );
-          } else if (index == 2) {
-            return BookCard(
+            ),
+            BookCard(
               bookTitle: "O lado feio do amor",
               author: "Colleen Hoover",
               imagePath: "lib/images/o_lado.png",
               onTap: () {
               },
-            );
-          } else if (index == 3) {
-            return BookCard(
+            ),
+            BookCard(
               bookTitle: "Os sete maridos de Evelyn Hugo",
               author: "Taylor Jenkins Reid",
               imagePath: "lib/images/os_sete.png",
               onTap: () {
               },
-            );
-          } else if (index == 4) {
-            return BookCard(
+            ),
+            BookCard(
               bookTitle: "Amor & Gelato",
               author: "Jenna Evans Welch",
               imagePath: "lib/images/amor.png",
               onTap: () {
               },
-            );
-          } else if (index == 5) {
-            return BookCard(
+            ),
+            BookCard(
               bookTitle: "O Homem de Giz",
               author: "C. J. Tudor",
               imagePath: "lib/images/o_homem.png",
               onTap: () {
-                            },
-            );
-          } else if (index == 6) {
-            return BookCard(
+                // Implemente a ação desejada para este livro
+              },
+            ),
+            BookCard(
               bookTitle: "Todas as suas (im)perfeições",
               author: "Colleen Hoover",
               imagePath: "lib/images/todas.png",
               onTap: () {
-
+                // Implemente a ação desejada para este livro
               },
-            );
-            
-          }
-        },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -145,14 +134,12 @@ class BookCard extends StatelessWidget {
   final String bookTitle;
   final String author;
   final String imagePath;
-  final bool smallerImage;
   final Function onTap;
 
   BookCard({
     required this.bookTitle,
     required this.author,
     required this.imagePath,
-    this.smallerImage = false,
     required this.onTap,
   });
 
@@ -160,30 +147,32 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4.0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            imagePath,
-            width: 250.0,
-            height: smallerImage ? 250.0 : 350.0,
-          ),
-          SizedBox(height: 8),
-          Text(
-            bookTitle,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 4),
-          Text(author, style: TextStyle(fontSize: 18)),
-          SizedBox(height: 8),
-          ElevatedButton(
-            onPressed: () {
-              onTap();
-            },
-            child: Text("Detalhes", style: TextStyle(fontSize: 20)),
-          ),
-        ],
+      child: InkWell(
+        onTap: () => onTap(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              imagePath,
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.width * 0.8 * 1.3,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              bookTitle,
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 4.0),
+            Text(
+              author,
+              style: TextStyle(fontSize: 14.0),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8.0),
+          ],
+        ),
       ),
     );
   }
