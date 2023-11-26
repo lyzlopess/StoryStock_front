@@ -36,28 +36,36 @@ class AboutUsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 60.0, vertical: 60.0),
-            padding: EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-              color: Colors.purple.shade900,
-              borderRadius: BorderRadius.circular(10.0),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 60.0, vertical: 60.0),
+                    padding: EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.purple.shade900,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Text(
+                      'O aplicativo é importante pois soluciona o principal problema da maioria dos leitores que é a incapacidade de comprar livros e pagar o frete, que impede que esses leitores tenham acesso à informações, ideias e histórias contidas nos livros. O aplicativo promove a sustentabilidade ambiental, permite a aquisição acessível à literatura e o compartilhamento de conhecimento. O modelo de vendas entre usuários cria uma economia colaborativa, onde os participantes se beneficiam mutuamente por meio do compartilhamento de recursos.',
+                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  (UserPage()))); // Implemente a ação de confirmação aqui
+                    },
+                    child: const Text('Confirmar'),
+                  ),
+                ],
+              ),
             ),
-            child: Text(
-              'O aplicativo é importante pois soluciona o principal problema da maioria dos leitores que é a incapacidade de comprar livros e pagar o frete, que impede que esses leitores tenham acesso à informações, ideias e histórias contidas nos livros. O aplicativo promove a sustentabilidade ambiental, permite a aquisição acessível à literatura e o compartilhamento de conhecimento. O modelo de vendas entre usuários cria uma economia colaborativa, onde os participantes se beneficiam mutuamente por meio do compartilhamento de recursos.',
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
-            ),
-          ),
-          Expanded(child: Container()),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          (UserPage()))); // Implemente a ação de confirmação aqui
-            },
-            child: const Text('Confirmar'),
           ),
         ],
       ),
