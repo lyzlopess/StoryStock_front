@@ -61,7 +61,7 @@ class _AddPhotosPageState extends State<AddPhotosPage> {
             height: 300.0,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.grey.shade500,
+                color: Colors.grey.shade600,
                 width: 1.0,
               ),
               borderRadius: BorderRadius.circular(8.0),
