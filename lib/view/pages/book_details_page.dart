@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:story_stock/view/pages/myshoppingcart2_page.dart';
+import 'package:story_stock/view/pages/myshoppingcart_page.dart';
+import 'package:story_stock/view/pages/user_page.dart';
+import 'package:story_stock/view/pages/wishbooks2_page.dart';
+import 'package:story_stock/view/pages/wishbooks_page.dart';
 
 class BookDetailsPage extends StatefulWidget {
   final String bookTitle;
@@ -39,10 +44,16 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                 isInCart = !isInCart;
               });
               if (isInCart) {
-                // Adicione lógica para adicionar o livro ao carrinho aqui
-                // Por exemplo, você pode usar um gerenciador de estado global ou
-                // algum método para lidar com o estado do carrinho.
                 print("Livro adicionado ao carrinho!");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShoppingCartPage2()),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShoppingCartPage()),
+                );
               }
             },
           ),
@@ -87,14 +98,26 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                       children: [
                         IconButton(
                           icon: Icon(
-                            isFavorite
-                                ? Icons.favorite
-                                : Icons.favorite_border,
+                            isFavorite ? Icons.favorite : Icons.favorite_border,
                             color: Colors.red,
                           ),
                           onPressed: () {
                             setState(() {
                               isFavorite = !isFavorite;
+                              if (isFavorite) {
+                                print("Livro adicionado aos favoritos!");
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => WishBooks2()),
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => WishBooks()),
+                                );
+                              }
                             });
                           },
                         ),
@@ -110,10 +133,18 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                               isInCart = !isInCart;
                             });
                             if (isInCart) {
-                              // Adicione lógica para adicionar o livro ao carrinho aqui
-                              // Por exemplo, você pode usar um gerenciador de estado global ou
-                              // algum método para lidar com o estado do carrinho.
                               print("Livro adicionado ao carrinho!");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ShoppingCartPage2()),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ShoppingCartPage()),
+                              );
                             }
                           },
                         ),

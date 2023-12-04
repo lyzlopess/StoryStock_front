@@ -17,39 +17,12 @@ class StoryStock extends StatelessWidget {
   }
 }
 
-class ShoppingCartPage extends StatefulWidget {
-  @override
-  State<ShoppingCartPage> createState() => _ShoppingCartPageState();
-}
-
-class _ShoppingCartPageState extends State<ShoppingCartPage> {
-  List<Item> items = [
-    Item("Livro: Todas as suas imperfeições", "lib/images/todas.png", 10.0),
-  ];
-
-  double total = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-    calculateTotal();
-  }
-
-  void calculateTotal() {
-    double sum = 0.0;
-    for (var item in items) {
-      sum += item.valor;
-    }
-    setState(() {
-      total = sum;
-    });
-  }
-
+class WishBooks2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meu carrinho'),
+        title: Text("Lista de desejos"),
         actions: [
           IconButton(
             icon: Icon(Icons.settings),
@@ -61,35 +34,31 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(items[index].imagePath),
-                  ),
-                  title: Text(items[index].nome),
-                  subtitle:
-                      Text('R\$ ${items[index].valor.toStringAsFixed(2)}'),
-                );
-              },
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('A culpa é das estrelas'),
+            subtitle: Text('Jonh Green'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(
+                  'lib/images/a_culpa_é_das_estrelas.png'), // Substitua pelo caminho real da imagem
             ),
           ),
-          Text(
-            'Total: R\$ ${total.toStringAsFixed(2)}',
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ListTile(
+            title: Text('Os sete maridos de Evelyn Hugo'),
+            subtitle: Text('Taylor Jenkins Reid'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(
+                  'lib/images/os_sete.png'), // Substitua pelo caminho real da imagem
+            ),
           ),
-          SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => UserPage()));
-              // Implemente a ação de confirmação aqui
-            },
-            child: Text('Confirmar'),
+          ListTile(
+            title: Text('É assim que acaba'),
+            subtitle: Text('Colleen Hoover'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(
+                  'lib/images/book.png'), // Substitua pelo caminho real da imagem
+            ),
           ),
         ],
       ),
@@ -131,12 +100,4 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
       ),
     );
   }
-}
-
-class Item {
-  final String nome;
-  final String imagePath;
-  final double valor;
-
-  Item(this.nome, this.imagePath, this.valor);
 }

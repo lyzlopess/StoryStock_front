@@ -35,31 +35,34 @@ class BooksAnnounced extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
-          // Lista de livros
-          Expanded(
-            child: ListView(
-              children: List.generate(2, (index) {
-                return ListTile(
-                  leading: Icon(Icons.book),
-                  title: Text("Livro ${index + 1}"),
-                  subtitle: Text("Autor do Livro ${index + 1}"),
-                  onTap: () {
-                    // Ação quando o livro for clicado
-                  },
-                );
-              }),
+          ListTile(
+            title: Text('O lado feio do amor'),
+            subtitle: Text('Colleen Hoover'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('lib/images/o_lado.png'),
             ),
           ),
-          IconButton(
-            icon: Icon(Icons.add_circle_outline, size: (35)),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => (AddPhotosPage())));
-            },
+          ListTile(
+            title: Text('O homem de giz'),
+            subtitle: Text('C. J. Tudor'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('lib/images/o_homem.png'),
+            ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddPhotosPage(),
+            ),
+          ); // Adicione a lógica para confirmar e processar as fotos aqui
+        },
+        child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(

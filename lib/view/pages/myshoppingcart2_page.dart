@@ -17,14 +17,15 @@ class StoryStock extends StatelessWidget {
   }
 }
 
-class ShoppingCartPage extends StatefulWidget {
+class ShoppingCartPage2 extends StatefulWidget {
   @override
-  State<ShoppingCartPage> createState() => _ShoppingCartPageState();
+  State<ShoppingCartPage2> createState() => _ShoppingCartPageState();
 }
 
-class _ShoppingCartPageState extends State<ShoppingCartPage> {
+class _ShoppingCartPageState extends State<ShoppingCartPage2> {
   List<Item> items = [
     Item("Livro: Todas as suas imperfeições", "lib/images/todas.png", 10.0),
+    Item("Livro: É assim que acaba", "lib/images/book.png", 15.0),
   ];
 
   double total = 0.0;
