@@ -36,11 +36,11 @@ class PersonalDataScreen extends StatelessWidget {
           SizedBox(height: 20),
           PersonalDataField(
             label: 'Nome',
-            value: 'Rafael Feitosa',
+            value: 'Guilherme Henrique',
           ),
           PersonalDataField(
             label: 'E-mail',
-            value: 'rafael.feitosa@ifgoiano.edu.br',
+            value: 'guilherme@gmail.com',
           ),
           PersonalDataField(
             label: 'CPF',
